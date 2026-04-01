@@ -1,0 +1,12 @@
+{ lib, inputs, ... }:
+
+{
+  # Import shared home modules
+  imports = [
+    inputs.self.homeModules.rime-config
+  ];
+
+  home.username = "phillychi3";
+  home.homeDirectory = lib.mkForce "/Users/phillychi3";
+  home.stateVersion = "24.11";
+}

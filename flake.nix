@@ -17,17 +17,6 @@
     blueprint.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs: inputs.blueprint {
-    inherit inputs;
-    
-    # Define available systems
-    systems = [ "aarch64-darwin" ];
-    
-    # Blueprint configuration
-    prefix = "nix-darwin";
-    nixpkgs.config = { };
-    
-    # Import modules from ./modules directory
-    modules = ./modules;
-  };
+  # Load the blueprint
+  outputs = inputs: inputs.blueprint { inherit inputs; };
 }
