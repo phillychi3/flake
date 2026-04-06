@@ -5,6 +5,8 @@
   imports = [
     inputs.self.homeModules.rime-config
     inputs.self.homeModules.starship
+    inputs.self.homeModules.fish
+    inputs.self.homeModules.fonts
   ];
 
   home.username = "phillychi3";

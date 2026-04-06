@@ -10,5 +10,6 @@
     wget
     hyfetch
     yazi-unwrapped
+    gh
   ];
 }
