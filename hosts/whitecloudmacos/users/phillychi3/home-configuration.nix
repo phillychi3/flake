@@ -4,6 +4,7 @@
   # Import shared home modules
   imports = [
     inputs.self.homeModules.rime-config
+    inputs.self.homeModules.starship
   ];
 
   home.username = "phillychi3";
