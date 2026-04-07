@@ -7,6 +7,7 @@
     inputs.self.homeModules.starship
     inputs.self.homeModules.fish
     inputs.self.homeModules.fonts
+    inputs.self.homeModules.ghostty
   ];
 
   home.username = "phillychi3";
