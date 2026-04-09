@@ -8,6 +8,7 @@
     inputs.self.homeModules.fish
     inputs.self.homeModules.fonts
     inputs.self.homeModules.ghostty
+    inputs.self.homeModules.tmux
   ];
 
   home.username = "phillychi3";
