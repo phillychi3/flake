@@ -38,12 +38,14 @@ in
         - zh_hant
         - zh_hans
         - zh_hant_tw
-      ascii_composer/good_old_caps_lock: false
-      ascii_composer/switch_key:
-        Caps_Lock: noop
-        Shift_L: noop
-        Shift_R: noop
-        Control_L: noop
-        Control_R: noop
+      ascii_composer:
+        good_old_caps_lock: false
+        switch_key:
+          Caps_Lock: noop
+          Shift_L: noop
+          Shift_R: noop
+          Control_L: noop
+          Control_R: noop
+          Eisu_toggle: noop
   '';
 }
