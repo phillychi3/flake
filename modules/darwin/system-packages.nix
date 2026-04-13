@@ -11,5 +11,8 @@
     hyfetch
     yazi-unwrapped
     gh
+    nodejs
+    pnpm
+    ni
   ];
 }
