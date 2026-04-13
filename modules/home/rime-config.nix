@@ -22,6 +22,7 @@ in
   # Patch iridium_bpmf schema directly to disable all switch keys
   home.file."Library/Rime/iridium_bpmf.custom.yaml".text = ''
     patch:
+      switches/@0/reset: 0
       ascii_composer:
         good_old_caps_lock: false
         switch_key:
