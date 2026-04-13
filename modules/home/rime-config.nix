@@ -19,6 +19,20 @@ in
   home.file."Library/Rime/mcbopomofo.dict.yaml".source =
     "${iridium-bpmf}/mcbopomofo.dict.yaml";
 
+  # Patch iridium_bpmf schema directly to disable all switch keys
+  home.file."Library/Rime/iridium_bpmf.custom.yaml".text = ''
+    patch:
+      ascii_composer:
+        good_old_caps_lock: false
+        switch_key:
+          Caps_Lock: noop
+          Shift_L: noop
+          Shift_R: noop
+          Control_L: noop
+          Control_R: noop
+          Eisu_toggle: noop
+  '';
+
   # Enable iridium_bpmf schema
   home.file."Library/Rime/default.custom.yaml".text = ''
     patch:
