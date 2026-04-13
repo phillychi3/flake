@@ -38,12 +38,12 @@ in
         - zh_hant
         - zh_hans
         - zh_hant_tw
-      ascii_composer/good_old_caps_lock: true
+      ascii_composer/good_old_caps_lock: false
       ascii_composer/switch_key:
-        Caps_Lock: commit_code
+        Caps_Lock: noop
         Shift_L: noop
         Shift_R: noop
-        Control_L: commit_code
-        Control_R: commit_code
+        Control_L: noop
+        Control_R: noop
   '';
 }
