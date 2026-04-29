@@ -16,5 +16,7 @@
     ni
     pay-respects
     zoxide
+    go
+    rustup
   ];
 }
