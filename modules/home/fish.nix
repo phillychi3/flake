@@ -5,7 +5,7 @@
     enable = true;
     interactiveShellInit = ''
       starship init fish | source
-      thefuck --alias | source
+      pay-respects --shell-alias fuck init fish | source
       zoxide init fish | source
     '';
     shellInit = ''

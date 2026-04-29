@@ -14,7 +14,7 @@
     nodejs
     pnpm
     ni
-    thefuck
+    pay-respects
     zoxide
   ];
 }
