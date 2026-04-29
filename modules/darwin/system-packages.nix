@@ -18,5 +18,8 @@
     zoxide
     go
     rustup
+    python3
+    poetry
+    uv
   ];
 }
