@@ -14,5 +14,7 @@
     nodejs
     pnpm
     ni
+    thefuck
+    zoxide
   ];
 }

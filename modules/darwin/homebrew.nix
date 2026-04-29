@@ -7,6 +7,9 @@
     casks = [
       "discord"
       "squirrel-app"
+      "shottr"
+      "vesktop"
+      "spotify"
     ];
   };
 }
