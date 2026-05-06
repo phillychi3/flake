@@ -25,5 +25,7 @@
   environment.systemPackages = with pkgs; [
     git vim curl htop
     nodejs_22
+    claude-code
+    opencode
   ];
 }
