@@ -27,7 +27,6 @@
     terminal = "tmux-256color";
     historyLimit = 10000;
     keyMode = "vi";
-    mouse = true;
     escapeTime = 0;
     baseIndex = 1;
 
@@ -41,6 +40,9 @@
     extraConfig = ''
       # True color support
       set -ag terminal-overrides ",xterm-256color:RGB"
+
+      # Mouse support
+      set -g mouse on
 
       # Prefix: Ctrl-a
       unbind C-b
