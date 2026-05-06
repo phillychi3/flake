@@ -5,7 +5,7 @@
     inputs.self.nixosModules.base
     inputs.self.nixosModules.zerotier
   ];
-
+  nixpkgs.hostPlatform = "x86_64-linux";
   networking.hostName = "lxclab";
   time.timeZone = "Asia/Taipei";
 
