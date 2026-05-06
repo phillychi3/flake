@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
@@ -22,17 +22,56 @@
 
   programs.nix-ld.enable = true;
 
+  programs.tmux = {
+    enable = true;
+    terminal = "tmux-256color";
+    historyLimit = 10000;
+    keyMode = "vi";
+    mouse = true;
+    escapeTime = 0;
+    baseIndex = 1;
+
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      yank
+      pain-control
+      tokyo-night-tmux
+    ];
+
+    extraConfig = ''
+      # True color support
+      set -ag terminal-overrides ",xterm-256color:RGB"
+
+      # Prefix: Ctrl-a
+      unbind C-b
+      set -g prefix C-a
+      bind C-a send-prefix
+
+      # Reload config
+      bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
+
+      # Split panes with current path
+      bind | split-window -h -c "#{pane_current_path}"
+      bind - split-window -v -c "#{pane_current_path}"
+      unbind '"'
+      unbind %
+
+      # New window with current path
+      bind c new-window -c "#{pane_current_path}"
+
+      # Pane index starts at 1
+      set -g pane-base-index 1
+      set-window-option -g pane-base-index 1
+      set-option -g renumber-windows on
+
+      # Status bar on top
+      set -g status-position top
+    '';
+  };
+
   environment.systemPackages = with pkgs; [
     git vim curl htop
     nodejs_22
     opencode
-
-    (pkgs.writeShellScriptBin "install-claude-code" ''
-      ${pkgs.nodejs_22}/bin/npm install -g @anthropic-ai/claude-code@latest
-    '')
   ];
-
-
-  environment.variables.NPM_CONFIG_PREFIX = "/home/phillychi3/.npm-global";
-  environment.variables.PATH = [ "/home/phillychi3/.npm-global/bin" ];
 }
