@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
@@ -25,7 +25,14 @@
   environment.systemPackages = with pkgs; [
     git vim curl htop
     nodejs_22
-    claude-code
     opencode
+
+    (pkgs.writeShellScriptBin "install-claude-code" ''
+      ${pkgs.nodejs_22}/bin/npm install -g @anthropic-ai/claude-code@latest
+    '')
   ];
+
+
+  environment.variables.NPM_CONFIG_PREFIX = "/home/phillychi3/.npm-global";
+  environment.variables.PATH = [ "/home/phillychi3/.npm-global/bin" ];
 }
