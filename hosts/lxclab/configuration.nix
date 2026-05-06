@@ -9,6 +9,8 @@
     inputs.self.nixosModules.slock-daemon
   ];
   nixpkgs.hostPlatform = "x86_64-linux";
+  nixpkgs.config.allowUnfree = true;
+
   networking.hostName = "lxclab";
   time.timeZone = "Asia/Taipei";
 

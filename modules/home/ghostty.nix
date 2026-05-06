@@ -11,5 +11,8 @@
     # Background
     background-opacity = 0.85
     background-blur-radius = 16
+
+    # Shell integration
+    shell-integration-features = adjust_selection,copy_paste,auto_title
   '';
 }
