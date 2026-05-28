@@ -3,6 +3,9 @@
 {
   programs.fish = {
     enable = true;
+    shellAliases = {
+      e = "eza --icons -l";
+    };
     interactiveShellInit = ''
       starship init fish | source
       pay-respects --shell-alias fuck init fish | source

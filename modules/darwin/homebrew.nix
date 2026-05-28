@@ -10,6 +10,7 @@
       "shottr"
       "vesktop"
       "spotify"
+      "thaw@beta"
     ];
   };
 }
