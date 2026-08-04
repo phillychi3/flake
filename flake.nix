@@ -18,6 +18,10 @@
 
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Herdr terminal multiplexer (builds from source via its flake)
+    herdr.url = "github:herdrdev/herdr/v0.8.0";
+    herdr.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # Load the blueprint

@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # System-wide packages
   environment.systemPackages = with pkgs; [
+    inputs.herdr.packages.${pkgs.system}.default
     neovim
     eza
     netcat
