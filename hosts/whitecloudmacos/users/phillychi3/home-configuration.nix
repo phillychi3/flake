@@ -9,6 +9,7 @@
     inputs.self.homeModules.fonts
     inputs.self.homeModules.ghostty
     inputs.self.homeModules.tmux
+    inputs.self.homeModules.herdr
   ];
 
   home.username = "phillychi3";

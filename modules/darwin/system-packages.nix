@@ -4,6 +4,7 @@
   # System-wide packages
   environment.systemPackages = with pkgs; [
     inputs.herdr.packages.${pkgs.system}.default
+    temurin-bin-21
     neovim
     eza
     netcat
