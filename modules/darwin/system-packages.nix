@@ -13,6 +13,7 @@
     hyfetch
     yazi-unwrapped
     gh
+    codex
     nodejs
     pnpm
     ni
