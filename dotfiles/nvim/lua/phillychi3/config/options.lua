@@ -107,3 +107,46 @@ require("vim._core.ui2").enable({
 		pager = { height = 0.5 },
 	},
 })
+
+-- Window title: a random quote picked from the time-of-day list
+local quotes = {
+	morning = {
+		"早安，今天也要寫好程式",
+		"先寫對，再寫快",
+		"今天的 bug 是明天的經驗值",
+		"Good morning, let's ship something today",
+	},
+	noon = {
+		"午安，記得喝水",
+		"Talk is cheap. Show me the code. — Linus Torvalds",
+		"過早的優化是萬惡之源 — Donald Knuth",
+		"能讓人看懂的程式碼，才是好程式碼",
+	},
+	evening = {
+		"晚安，辛苦了",
+		"bug 不會因為你盯著它而消失，但你可以先去吃飯",
+		"休息也是工作的一部分",
+	},
+	late = {
+		"這麼晚還在寫？早點睡",
+		"深夜寫的 code，明天早上看會很想刪掉",
+		"眼睛會累，程式不會因此跑得比較快",
+	},
+}
+
+local function pick_quote()
+	local h = tonumber(os.date("%H"))
+	local list
+	if h >= 5 and h < 12 then
+		list = quotes.morning
+	elseif h >= 12 and h < 18 then
+		list = quotes.noon
+	elseif h >= 18 and h < 22 then
+		list = quotes.evening
+	else
+		list = quotes.late
+	end
+	math.randomseed(os.time())
+	return list[math.random(#list)]
+end
+vim.opt.titlestring = pick_quote()
