@@ -1,0 +1,28 @@
+local augroup = vim.api.nvim_create_augroup("UserConfig", {})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+	group = augroup,
+	pattern = "*",
+	command = "set nopaste",
+})
+
+-- Highlight the current line only in the active window
+local cursorline_group = vim.api.nvim_create_augroup("CursorLine", { clear = true })
+vim.api.nvim_create_autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
+	group = cursorline_group,
+	pattern = "*",
+	command = "setlocal cursorline",
+})
+vim.api.nvim_create_autocmd("WinLeave", {
+	group = cursorline_group,
+	pattern = "*",
+	command = "setlocal nocursorline",
+})
+
+-- Highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = augroup,
+	callback = function()
+		vim.hl.on_yank()
+	end,
+})

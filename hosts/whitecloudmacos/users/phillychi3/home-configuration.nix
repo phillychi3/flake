@@ -10,6 +10,7 @@
     inputs.self.homeModules.ghostty
     inputs.self.homeModules.tmux
     inputs.self.homeModules.herdr
+    inputs.self.homeModules.neovim
   ];
 
   home.username = "phillychi3";
