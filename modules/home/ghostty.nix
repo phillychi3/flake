@@ -14,6 +14,7 @@ let
       --background-image="$img" \
       --background-image-opacity=0.2 \
       --background-image-fit=cover \
+      --working-directory="$PWD" \
       -e nvim "$@"
   '';
 in
